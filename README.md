@@ -39,26 +39,22 @@ Bob 25 Designer
 |------------|-------|------------|
 ```
 ## Installation
-
+```
 git clone https://github.com/CSIIISC/Excel-to-Markdown-Table-Converter.git
 cd Excel-to-Markdown-Table-Converter
-
+```
 Or simply download:
-
+```
 index.html
-
-License
+```
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contributing
-Contributions welcome! Please:
+## Contributing
 
-Fork the repository
-
-Create your feature branch
-
-Commit your changes
-
-Push to the branch
-
-Open a pull request
+- Contributions welcome! Please:
+- Fork the repository
+- Create your feature branch
+- Commit your changes
+- Push to the branch
+- Open a pull request
