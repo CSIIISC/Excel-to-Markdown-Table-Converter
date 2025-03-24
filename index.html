@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel to Markdown Table</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 150px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>Paste Raw Excel Data Below:</h2>
+    <textarea id="excelInput" placeholder="Paste your Excel data here..."></textarea>
+    <button onclick="convertToTable()">Convert</button>
+    <h2>Formatted Table:</h2>
+    <pre id="output"></pre>
+
+    <script>
+        function convertToTable() {
+            let input = document.getElementById("excelInput").value.trim();
+            let rows = input.split(/\r?\n/).map(row => row.split(/\t/));
+            
+            if (rows.length === 0) return;
+
+            let colWidths = [];
+            rows.forEach(row => {
+                row.forEach((cell, index) => {
+                    let length = cell.trim().length;
+                    colWidths[index] = Math.max(colWidths[index] || 0, length);
+                });
+            });
+
+            let separator = "|" + colWidths.map(w => "-".repeat(w + 2)).join("|") + "|";
+            let formattedTable = separator + "\n";
+            
+            rows.forEach((row, rowIndex) => {
+                let formattedRow = "| " + row.map((cell, index) => cell.trim().padEnd(colWidths[index])).join(" | ") + " |";
+                formattedTable += formattedRow + "\n";
+                if (rowIndex === 0 || rowIndex === rows.length - 1) {
+                    formattedTable += separator + "\n";
+                }
+            });
+
+            document.getElementById("output").textContent = formattedTable;
+        }
+    </script>
+</body>
+</html>
