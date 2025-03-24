@@ -37,7 +37,7 @@ Bob 25 Designer
 | Alice      | 30    | Engineer   |
 | Bob        | 25    | Designer   |
 |------------|-------|------------|
-
+```
 ## Installation
 
 git clone https://github.com/CSIIISC/Excel-to-Markdown-Table-Converter.git
