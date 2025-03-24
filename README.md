@@ -24,9 +24,9 @@ A simple web tool to convert raw Excel data into Markdown table format. Paste yo
 ## Example Input/Output
 
 **Excel Input:**
-Name Age Occupation
-Alice 30 Engineer
-Bob 25 Designer
+
+![image](https://github.com/user-attachments/assets/eee764d6-a4e5-4a22-8707-0cedb46f2b12)
+
 
 
 **Markdown Output:**
